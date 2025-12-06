@@ -66,11 +66,6 @@ if TYPE_CHECKING:
     from java.time import Instant, ZonedDateTime, ZoneId
 
 
-class classproperty(property):  # pylint: disable=invalid-name
-    def __get__(self, cls, owner):  # type: ignore[no-untyped-def]
-        return classmethod(self.fget).__get__(None, owner)()
-
-
 class Collection(object):
 
     def add(self, e):
@@ -1275,117 +1270,35 @@ class Locale(Object):
     language = None  # type: str
     variant = None  # type: Optional[str]
 
+    # Class attribute constants
+    CANADA = None  # type: Locale
+    CANADA_FRENCH = None  # type: Locale
+    CHINA = None  # type: Locale
+    CHINESE = None  # type: Locale
+    ENGLISH = None  # type: Locale
+    FRANCE = None  # type: Locale
+    FRENCH = None  # type: Locale
+    GERMAN = None  # type: Locale
+    GERMANY = None  # type: Locale
+    ITALIAN = None  # type: Locale
+    ITALY = None  # type: Locale
+    JAPAN = None  # type: Locale
+    JAPANESE = None  # type: Locale
+    KOREA = None  # type: Locale
+    KOREAN = None  # type: Locale
+    PRC = None  # type: Locale
+    SIMPLIFIED_CHINESE = None  # type: Locale
+    TAIWAN = None  # type: Locale
+    TRADITIONAL_CHINESE = None  # type: Locale
+    UK = None  # type: Locale
+    US = None  # type: Locale
+
     def __init__(self, language, country=None, variant=None):
         # type: (str, Optional[str], Optional[str]) -> None
         super(Locale, self).__init__()
         self.language = language
         self.country = country
         self.variant = variant
-
-    @classproperty
-    def CANADA(self):
-        # type: () -> Locale
-        return Locale("en", "CA")
-
-    @classproperty
-    def CANADA_FRENCH(self):
-        # type: () -> Locale
-        return Locale("fr", "CA")
-
-    @classproperty
-    def CHINA(self):
-        # type: () -> Locale
-        return Locale("zh", "CN")
-
-    @classproperty
-    def CHINESE(self):
-        # type: () -> Locale
-        return Locale("zh")
-
-    @classproperty
-    def ENGLISH(self):
-        # type: () -> Locale
-        return Locale("en")
-
-    @classproperty
-    def FRANCE(self):
-        # type: () -> Locale
-        return Locale("fr", "FR")
-
-    @classproperty
-    def FRENCH(self):
-        # type: () -> Locale
-        return Locale("fr")
-
-    @classproperty
-    def GERMAN(self):
-        # type: () -> Locale
-        return Locale("de")
-
-    @classproperty
-    def GERMANY(self):
-        # type: () -> Locale
-        return Locale("de", "DE")
-
-    @classproperty
-    def ITALIAN(self):
-        # type: () -> Locale
-        return Locale("it")
-
-    @classproperty
-    def ITALY(self):
-        # type: () -> Locale
-        return Locale("it", "IT")
-
-    @classproperty
-    def JAPAN(self):
-        # type: () -> Locale
-        return Locale("ja", "JP")
-
-    @classproperty
-    def JAPANESE(self):
-        # type: () -> Locale
-        return Locale("ja")
-
-    @classproperty
-    def KOREA(self):
-        # type: () -> Locale
-        return Locale("ko", "KR")
-
-    @classproperty
-    def KOREAN(self):
-        # type: () -> Locale
-        return Locale("ko")
-
-    @classproperty
-    def PRC(self):
-        # type: () -> Locale
-        return Locale("zh", "CN")
-
-    @classproperty
-    def SIMPLIFIED_CHINESE(self):
-        # type: () -> Locale
-        return Locale("zh", "CN")
-
-    @classproperty
-    def TAIWAN(self):
-        # type: () -> Locale
-        return Locale("zh", "TW")
-
-    @classproperty
-    def TRADITIONAL_CHINESE(self):
-        # type: () -> Locale
-        return Locale("zh", "TW")
-
-    @classproperty
-    def UK(self):
-        # type: () -> Locale
-        return Locale("en", "GB")
-
-    @classproperty
-    def US(self):
-        # type: () -> Locale
-        return Locale("en", "US")
 
     def __str__(self):
         # type: () -> str
@@ -1399,6 +1312,29 @@ class Locale(Object):
     def __repr__(self):
         # type: () -> str
         return "{!r}".format(self.__str__())
+
+
+Locale.CANADA = Locale("en", "CA")
+Locale.CANADA_FRENCH = Locale("fr", "CA")
+Locale.CHINA = Locale("zh", "CN")
+Locale.CHINESE = Locale("zh")
+Locale.ENGLISH = Locale("en")
+Locale.FRANCE = Locale("fr", "FR")
+Locale.FRENCH = Locale("fr")
+Locale.GERMAN = Locale("de")
+Locale.GERMANY = Locale("de", "DE")
+Locale.ITALIAN = Locale("it")
+Locale.ITALY = Locale("it", "IT")
+Locale.JAPAN = Locale("ja", "JP")
+Locale.JAPANESE = Locale("ja")
+Locale.KOREA = Locale("ko", "KR")
+Locale.KOREAN = Locale("ko")
+Locale.PRC = Locale("zh", "CN")
+Locale.SIMPLIFIED_CHINESE = Locale("zh", "CN")
+Locale.TAIWAN = Locale("zh", "TW")
+Locale.TRADITIONAL_CHINESE = Locale("zh", "TW")
+Locale.UK = Locale("en", "GB")
+Locale.US = Locale("en", "US")
 
 
 class Properties(Hashtable):

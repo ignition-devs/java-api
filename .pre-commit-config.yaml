@@ -1,0 +1,87 @@
+ci:
+  autoupdate_commit_msg: 'build(deps): pre-commit autoupdate'
+  autofix_commit_msg: 'style: apply auto fixes with pre-commit'
+  skip:
+    - pylint
+
+repos:
+  - repo: https://github.com/aio-libs/sort-all
+    rev: v1.3.0
+    hooks:
+      - id: sort-all
+        files: ^java-api/src/
+  - repo: https://github.com/bwhmather/ssort
+    rev: 0.15.0
+    hooks:
+      - id: ssort
+        files: ^java-api/src/
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 25.11.0
+    hooks:
+      - id: black
+  - repo: https://github.com/hakancelikdev/unimport
+    rev: 1.3.0
+    hooks:
+      - id: unimport
+        files: ^java-api/src/
+        language_version: python3.12
+  - repo: https://github.com/PyCQA/isort
+    rev: 7.0.0
+    hooks:
+      - id: isort
+        name: isort-java-api
+        files: ^java-api/src/
+        args: [--settings-file, java-api/tox.ini]
+  - repo: https://github.com/PyCQA/isort
+    rev: 7.0.0
+    hooks:
+      - id: isort
+        name: isort-java-api-stubs
+        files: ^java-api-stubs/stubs/
+        args: [--settings-file, java-api-stubs/tox.ini]
+  - repo: https://github.com/PyCQA/docformatter
+    rev: v1.7.7
+    hooks:
+      - id: docformatter
+        files: ^java-api/src/
+        args: [--config, java-api/tox.ini]
+        language_version: python3.12
+  - repo: https://github.com/coatl-dev/flake8
+    rev: 5.0.4
+    hooks:
+      - id: flake8
+        name: flake8-java-api
+        files: ^java-api/src/
+        args: [--config, java-api/tox.ini]
+        additional_dependencies: [pydoclint]
+        language_version: python3.12
+  - repo: https://github.com/PyCQA/flake8
+    rev: 7.3.0
+    hooks:
+      - id: flake8
+        name: flake8-java-api-stubs
+        types: [file]
+        files: \.(pyi)$
+        additional_dependencies: [flake8-pyi]
+        args: [--config, java-api-stubs/tox.ini]
+  - repo: https://github.com/PyCQA/pydocstyle
+    rev: 6.3.0
+    hooks:
+      - id: pydocstyle
+        files: ^java-api/src/
+        args: [--config, java-api/tox.ini]
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.10.0
+    hooks:
+      - id: commitizen
+      - id: commitizen-branch
+        stages: [pre-push]
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        entry: pylint
+        language: system
+        files: ^java-api/src/
+        types: [python]
+        args: [--rcfile, java-api/.pylintrc]

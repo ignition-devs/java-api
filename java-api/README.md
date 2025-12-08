@@ -32,7 +32,7 @@ The preferred method is to install it by running `pip`. It requires Python
 2.7.18.
 
 ```bash
-python2 -m pip install git+https://github.com/ignition-devs/java-api-17.git#subdirectory=java-api
+python2 -m pip install java-api
 ```
 
 This will install it as package to your Python installation, which will allow
@@ -41,8 +41,8 @@ completion using an IDE such as PyCharm and Visual Studio Code.
 
 ```bash
 $ python2
-Python 2.7.18 (default, Nov  9 2020, 16:23:15)
-[GCC Apple LLVM 12.0.0 (clang-1200.0.32.21)] on darwin
+Python 2.7.18 (default, Sep 23 2024, 13:23:35)
+[GCC Apple LLVM 16.0.0 (clang-1600.0.26.3)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> from __future__ import print_function
 >>> import java.lang

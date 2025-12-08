@@ -6,14 +6,14 @@ files were generated using `mypy`'s [`stubgen`].
 ## Installation and usage
 
 To use java-api-stubs, you may install it with `pip`. It requires Python
-3.7+ through 3.12.
+3.7 through 3.12.
 
 > [!WARNING]
 > Python 3.13 will not be supported.
 
 ```sh
 python3 -m pip install \
-    git+https://github.com/ignition-devs/java-api-17.git#subdirectory=java-api-stubs \
+    java-api-stubs \
     "mypy[python2]==0.971"
 ```
 

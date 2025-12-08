@@ -1,0 +1,34 @@
+name: publish
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  pr-build:
+    needs: ci
+    uses: ./.github/workflows/pr-build.yml
+
+  pypi-upload:
+    needs: pr-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v6
+
+      - name: Upload ignition-api to PyPI
+        uses: coatl-dev/actions/pypi-upload@v5
+        with:
+          password: ${{ secrets.PYPI_API_TOKEN_JAVA_API_PKG }}
+          working-directory: java-api
+
+      - name: Upload ignition-api-stubs to PyPI
+        uses: coatl-dev/actions/pypi-upload@v5
+        with:
+          python-version: '3.12'
+          password: ${{ secrets.PYPI_API_TOKEN_JAVA_API_STUBS }}
+          working-directory: java-api-stubs

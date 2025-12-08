@@ -3,7 +3,7 @@ gpg_sign = true
 name = "cz_conventional_commits"
 tag_format = "$version"
 version_scheme = "pep440"
-version = "17.25.0b1"
+version = "17.25.0b2"
 update_changelog_on_bump = true
 version_files = [
   "java-api/setup.cfg:version",

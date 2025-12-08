@@ -35,10 +35,6 @@ classifiers = [
   "Typing :: Stubs Only",
   "Typing :: Typed",
 ]
-dependencies = [
-  "mypy[python2]==0.971",
-  "types-enum34",
-]
 urls.Funding = "https://github.com/sponsors/cesarcoatl"
 urls.Homepage = "https://github.com/ignition-devs/java-api"
 urls.Source = "https://github.com/ignition-devs/java-api"

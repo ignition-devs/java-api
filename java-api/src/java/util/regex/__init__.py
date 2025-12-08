@@ -98,11 +98,11 @@ class Matcher(Object, MatchResult):
         pass
 
     def replaceAll(self, arg):
-        # type: (Union[Function, str, unicode]) -> Union[str, unicode]
+        # type: (Union[str, unicode, Function]) -> Union[str, unicode]
         pass
 
     def replaceFirst(self, arg):
-        # type: (Union[Function, str, unicode]) -> Union[str, unicode]
+        # type: (Union[str, unicode, Function]) -> Union[str, unicode]
         pass
 
     def requireEnd(self):

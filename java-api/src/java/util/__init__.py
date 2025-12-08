@@ -1045,7 +1045,7 @@ class Currency(Object):
 
     @staticmethod
     def getInstance(arg):
-        # type: (Union[Locale, str, unicode]) -> Currency
+        # type: (Union[str, unicode, Locale]) -> Currency
         pass
 
     def getNumericCode(self):

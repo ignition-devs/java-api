@@ -36,9 +36,9 @@ classifiers = [
   "Typing :: Typed",
 ]
 urls.Funding = "https://github.com/sponsors/cesarcoatl"
-urls.Homepage = "https://github.com/ignition-devs/java-api"
-urls.Source = "https://github.com/ignition-devs/java-api"
-urls.Tracker = "https://github.com/ignition-devs/java-api/issues"
+urls.Homepage = "https://github.com/ignition-devs/java-api-17"
+urls.Source = "https://github.com/ignition-devs/java-api-17"
+urls.Tracker = "https://github.com/ignition-devs/java-api-17/issues"
 
 [tool.setuptools]
 include-package-data = true

@@ -32,7 +32,7 @@ The preferred method is to install it by running `pip`. It requires Python
 2.7.18.
 
 ```bash
-python2 -m pip install git+https://github.com/ignition-devs/java-api.git#subdirectory=java-api
+python2 -m pip install git+https://github.com/ignition-devs/java-api-17.git#subdirectory=java-api
 ```
 
 This will install it as package to your Python installation, which will allow
@@ -97,9 +97,9 @@ See the [LICENSE].
 This project has adopted the [Microsoft Open Source Code of Conduct].
 
 <!-- Links -->
-[CONTRIBUTING.md]: https://github.com/ignition-devs/java-api/blob/java-17/CONTRIBUTING.md#contributing-to-java-api
-[CONTRIBUTORS]: https://github.com/ignition-devs/java-api/graphs/contributors
+[CONTRIBUTING.md]: https://github.com/ignition-devs/java-api-17/blob/main/CONTRIBUTING.md#contributing-to-java-api
+[CONTRIBUTORS]: https://github.com/ignition-devs/java-api-17/graphs/contributors
 [Discussions]: https://github.com/orgs/ignition-devs/discussions
-[LICENSE]: https://github.com/ignition-devs/java-api/blob/java-17/LICENSE
+[LICENSE]: https://github.com/ignition-devs/java-api-17/blob/main/LICENSE
 [Microsoft Open Source Code of Conduct]: https://opensource.microsoft.com/codeofconduct/
 [Python 2.7.18]: https://www.python.org/downloads/release/python-2718/

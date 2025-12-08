@@ -12,7 +12,9 @@ To use java-api-stubs, you may install it with `pip`. It requires Python
 > Python 3.13 will not be supported.
 
 ```sh
-python3 -m pip install git+https://github.com/ignition-devs/java-api.git#subdirectory=java-api-stubs
+python3 -m pip install \
+    git+https://github.com/ignition-devs/java-api-17.git#subdirectory=java-api-stubs \
+    "mypy[python2]==0.971"
 ```
 
 To run `mypy` against your code, execute the following command passing the
@@ -51,11 +53,11 @@ See the [LICENSE].
 See [CODE_OF_CONDUCT.md].
 
 <!-- Links -->
-[CODE_OF_CONDUCT.md]: https://github.com/ignition-devs/.github/blob/java-17/CODE_OF_CONDUCT.md
-[CONTRIBUTING.md]: https://github.com/ignition-devs/java-api/blob/java-17/CONTRIBUTING.md
-[contributors]: https://github.com/ignition-devs/java-api-stubs/graphs/contributors
+[CODE_OF_CONDUCT.md]: https://github.com/ignition-devs/.github/blob/main/CODE_OF_CONDUCT.md
+[CONTRIBUTING.md]: https://github.com/ignition-devs/java-api-17/blob/main/CONTRIBUTING.md
+[contributors]: https://github.com/ignition-devs/java-api-17/graphs/contributors
 [Discussions]: https://github.com/orgs/ignition-devs/discussions
-[`java-api`]: https://github.com/ignition-devs/java-api
-[LICENSE]: https://github.com/ignition-devs/java-api/blob/java-17/LICENSE
+[`java-api`]: https://github.com/ignition-devs/java-api-17
+[LICENSE]: https://github.com/ignition-devs/java-api-17/blob/main/LICENSE
 [`stubgen`]: https://coatl-mypy.readthedocs.io/en/v0.971/stubgen.html
 [stubs]: https://www.python.org/dev/peps/pep-484/

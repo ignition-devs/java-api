@@ -560,7 +560,7 @@ class Path(Watchable):
         pass
 
     def endsWith(self, other):
-        # type: (Union[Object, Path, str, unicode]) -> bool
+        # type: (Union[str, unicode, Object, Path]) -> bool
         return True
 
     def equals(self, other):

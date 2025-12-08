@@ -72,10 +72,6 @@ typed-ast==1.5.5 \
     --hash=sha256:fd946abf3c31fb50eee07451a6aedbfff912fcd13cf357363f5b4e834cc5e71a \
     --hash=sha256:fe58ef6a764de7b4b36edfc8592641f56e69b7163bba9f9c8089838ee596bfb2
     # via mypy
-types-enum34==1.1.8 \
-    --hash=sha256:05058c7a495f6bfaaca0be4aeac3cce5cdd80a2bad2aab01fd49a20bf4a0209d \
-    --hash=sha256:6f9c769641d06d73a55e11c14d38ac76fcd37eb545ce79cebb6eec9d50a64110
-    # via java-api-stubs (pyproject.toml)
 typing-extensions==4.15.0 \
     --hash=sha256:0cea48d173cc12fa28ecabc3b837ea3cf6f38c6d1136f85cbaaf598984861466 \
     --hash=sha256:f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548

@@ -11,9 +11,9 @@ description = "Java 17 API Specification stubs for ignition-api"
 readme = "README.md"
 keywords = [
   "coatl.dev",
-  "java",
-  "inductive automation",
   "ignition",
+  "inductive automation",
+  "java",
 ]
 license = "MIT"
 authors = [ { name = "César Román", email = "cesar@coatl.dev" } ]

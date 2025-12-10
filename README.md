@@ -37,7 +37,7 @@ To use java-api, you may install it by doing any of the following.
 ### Installing with `pip`
 
 > [!NOTE]
-> For the stubs for this packages, look for [`java-api-stubs`].
+> For stub files for this package, look for [`java-api-stubs`].
 
 The preferred method is to install it by running `pip`. It requires Python
 2.7.18.

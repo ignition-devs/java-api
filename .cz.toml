@@ -6,6 +6,6 @@ version_scheme = "pep440"
 version = "17.25.0b5"
 update_changelog_on_bump = true
 version_files = [
-  "java-api/setup.cfg:version",
-  "java-api-stubs/pyproject.toml:version"
+  "setup.cfg:version",
+  "stubs/pyproject.toml:version"
 ]

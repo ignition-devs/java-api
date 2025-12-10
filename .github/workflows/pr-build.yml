@@ -9,18 +9,16 @@ on:
       - '**/pyproject.toml'
       - '**/requirements.txt'
       - '**/tox.ini'
-      - java-api/src/**
-      - java-api/setup.cfg
-      - java-api/setup.py
-      - java-api/tests/**
-      - java-api-stubs/stubs/**
+      - src/**
+      - setup.cfg
+      - setup.py
+      - tests/**
+      - stubs/stubs/**
   workflow_call:
 
 jobs:
   tox-java-api:
     uses: coatl-dev/workflows/.github/workflows/tox-docker.yml@v6
-    with:
-      working-directory: java-api
 
   tox-java-api-stubs:
     uses: coatl-dev/workflows/.github/workflows/tox.yml@v6
@@ -30,4 +28,4 @@ jobs:
         3.10
         3.11
         3.12
-      working-directory: java-api-stubs
+      working-directory: stubs

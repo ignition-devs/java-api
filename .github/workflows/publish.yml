@@ -24,11 +24,10 @@ jobs:
         uses: coatl-dev/actions/pypi-upload@v5
         with:
           password: ${{ secrets.PYPI_API_TOKEN_JAVA_API_PKG }}
-          working-directory: java-api
 
       - name: Upload java-api-stubs to PyPI
         uses: coatl-dev/actions/pypi-upload@v5
         with:
           python-version: '3.12'
           password: ${{ secrets.PYPI_API_TOKEN_JAVA_API_STUBS }}
-          working-directory: java-api-stubs
+          working-directory: stubs

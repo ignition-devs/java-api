@@ -1,5 +1,11 @@
 # java-api-stubs
 
+<!--- Badges --->
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/java-api-stubs)](https://pypi.org/project/java-api-stubs/)
+[![PyPI - Version](https://img.shields.io/pypi/v/java-api-stubs)](https://pypi.org/project/java-api-stubs/)
+[![PyPI - Downloads](https://pepy.tech/badge/java-api-stubs)](https://pepy.tech/project/java-api-stubs)
+[![Join us on GitHub discussions](https://img.shields.io/badge/github-discussions-informational)](https://github.com/orgs/ignition-devs/discussions)
+
 This package contains a collection of [stubs] for [`java-api`]. These
 files were generated using `mypy`'s [`stubgen`].
 

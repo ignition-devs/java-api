@@ -32,7 +32,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Installation and usage
 
-To use java-api, you may install it by doing any of the following.
+To use java-api, you may install it using the following method.
 
 ### Installing with `pip`
 

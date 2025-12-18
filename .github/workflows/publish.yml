@@ -6,7 +6,11 @@ on:
       - published
 
 jobs:
+  tox:
+    uses: ./.github/workflows/tox.yml
+
   pypi-upload:
+    needs: tox
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo

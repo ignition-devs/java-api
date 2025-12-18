@@ -7,22 +7,11 @@ on:
       - main
 
 jobs:
-  tox-package:
-    if: ${{ github.event_name == 'pull_request' }}
-    uses: coatl-dev/workflows/.github/workflows/tox-docker.yml@v6
-
-  tox-stubs:
-    if: ${{ github.event_name == 'pull_request' }}
-    uses: coatl-dev/workflows/.github/workflows/tox.yml@v6
-    with:
-      python-versions: |
-        3.9
-        3.10
-        3.11
-        3.12
-      working-directory: stubs
-
   pylint:
     uses: coatl-dev/workflows/.github/workflows/pylint.yml@v6
     with:
       path: src
+
+  tox:
+    if: ${{ github.event_name == 'pull_request' }}
+    uses: ./.github/workflows/tox.yml

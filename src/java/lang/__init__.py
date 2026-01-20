@@ -44,6 +44,7 @@ if TYPE_CHECKING:
     from java.nio import CharBuffer
     from java.util import Iterator, Spliterator
     from java.util.function import Consumer
+    from java.util.stream import IntStream, Stream
 
 
 class Object(object):
@@ -119,10 +120,12 @@ class CharSequence(object):
         # type: (int) -> str
         raise NotImplementedError
 
-    def chars(self):  # type: ignore[no-untyped-def]
+    def chars(self):
+        # type: () -> IntStream
         pass
 
-    def codePoints(self):  # type: ignore[no-untyped-def]
+    def codePoints(self):
+        # type: () -> IntStream
         pass
 
     @staticmethod
@@ -291,7 +294,8 @@ class String(unicode):
         # type: (int) -> unicode
         pass
 
-    def chars(self):  # type: ignore[no-untyped-def]
+    def chars(self):
+        # type: () -> IntStream
         pass
 
     def codePointAt(self, index):
@@ -306,7 +310,8 @@ class String(unicode):
         # type: (int, int) -> int
         pass
 
-    def codePoints(self):  # type: ignore[no-untyped-def]
+    def codePoints(self):
+        # type: () -> IntStream
         pass
 
     @staticmethod
@@ -392,7 +397,8 @@ class String(unicode):
         # type: () -> int
         return len(self)
 
-    def lines(self):  # type: ignore[no-untyped-def]
+    def lines(self):
+        # type: () -> Stream
         pass
 
     def matches(self, regex):

@@ -5,6 +5,8 @@ __all__ = [
     "BinaryOperator",
     "Consumer",
     "Function",
+    "IntConsumer",
+    "IntPredicate",
     "Predicate",
     "Supplier",
     "ToDoubleFunction",
@@ -90,6 +92,26 @@ class Function(object):
     def identity():
         # type: () -> Function
         pass
+
+
+class IntConsumer(object):
+    def accept(self, value):
+        # type: (int) -> None
+        raise NotImplementedError
+
+    def andThen(self, after):
+        # type: (IntConsumer) -> IntConsumer
+        pass
+
+
+class IntPredicate(object):
+    def negate(self):
+        # type: () -> IntPredicate
+        pass
+
+    def test(self, value):
+        # type: (int) -> bool
+        raise NotImplementedError
 
 
 class Predicate(object):

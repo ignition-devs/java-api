@@ -31,7 +31,6 @@ __all__ = [
     "Map",
     "Properties",
     "Spliterator",
-    "Stream",
     "TimeZone",
     "UUID",
 ]
@@ -54,7 +53,6 @@ from java.util.function import (
     Consumer,
     Function,
     Predicate,
-    Supplier,
     ToDoubleFunction,
     ToIntFunction,
     ToLongFunction,
@@ -64,6 +62,7 @@ if TYPE_CHECKING:
     from java.io import InputStream, OutputStream
     from java.nio import ByteBuffer
     from java.time import Instant, ZonedDateTime, ZoneId
+    from java.util.stream import Stream
 
 
 class Collection(object):
@@ -466,58 +465,7 @@ class Spliterator(object):
         raise NotImplementedError
 
 
-class Stream(object):
-
-    class Builder(Consumer):
-        def accept(self, t):
-            # type: (Any) -> None
-            raise NotImplementedError
-
-        def add(self, t):
-            # type: (Any) -> Stream.Builder
-            pass
-
-        def build(self):
-            # type: () -> Stream
-            raise NotImplementedError
-
-    @staticmethod
-    def builder():
-        # type: () -> Builder
-        pass
-
-    @staticmethod
-    def concat(a, b):
-        # type: (Stream, Stream) -> Stream
-        pass
-
-    @staticmethod
-    def empty():
-        # type: () -> Stream
-        pass
-
-    @staticmethod
-    def generate(s):
-        # type: (Supplier) -> Stream
-        pass
-
-    @staticmethod
-    def iterate(*args):
-        # type: (*Any) -> Stream
-        pass
-
-    @staticmethod
-    def of(*args):
-        # type: (*Any) -> Stream
-        pass
-
-    @staticmethod
-    def ofNullable(t):
-        # type: (Any) -> Stream
-        pass
-
-
-class Arrays(Object):
+class Arrays(object):
     @staticmethod
     def asList(a):
         # type: (Any) -> List[Any]
@@ -605,6 +553,11 @@ class Arrays(Object):
     @staticmethod
     def stream(array, startInclusive=None, endExclusive=None):
         # type: (Iterable[Any], Optional[int], Optional[int]) -> Stream
+        pass
+
+    @staticmethod
+    def toString(a):
+        # type: (List[Any]) -> Union[str, unicode]
         pass
 
 

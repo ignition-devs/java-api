@@ -1,10 +1,17 @@
-__all__ = ["BaseStream", "Collector", "Stream"]
+__all__ = ["BaseStream", "Collector", "IntStream", "Stream"]
 
 from typing import Any, Iterable, Set
 
 from java.lang import AutoCloseable, Enum, Runnable
 from java.util import Iterator, Spliterator
-from java.util.function import BiConsumer, BinaryOperator, Consumer, Function, Supplier
+from java.util.function import (
+    BiConsumer,
+    BinaryOperator,
+    Consumer,
+    Function,
+    IntConsumer,
+    Supplier,
+)
 
 
 class BaseStream(AutoCloseable):
@@ -72,6 +79,67 @@ class Collector(object):
 
     def supplier(self):
         # type: () -> Supplier
+        pass
+
+
+class IntStream(BaseStream):
+
+    class Builder(IntConsumer):
+        def accept(self, value):
+            # type: (int) -> None
+            raise NotImplementedError
+
+        def add(self, t):
+            # type: (int) -> IntStream.Builder
+            pass
+
+        def build(self):
+            # type: () -> IntStream
+            raise NotImplementedError
+
+    class IntMapMultiConsumer(object):
+        def accept(self, value, ic):
+            # type: (int, IntConsumer) -> None
+            raise NotImplementedError
+
+        def add(self, t):
+            # type: (Any) -> Stream.Builder
+            pass
+
+        def build(self):
+            # type: () -> Stream
+            raise NotImplementedError
+
+    def close(self):
+        # type: () -> None
+        pass
+
+    def isParallel(self):
+        # type: () -> bool
+        return True
+
+    def iterator(self):
+        # type: () -> Iterator
+        pass
+
+    def onClose(self, closeHandler):
+        # type: (Runnable) -> Any
+        pass
+
+    def parallel(self):
+        # type: () -> Any
+        pass
+
+    def sequential(self):
+        # type: () -> Any
+        pass
+
+    def spliterator(self):
+        # type: () -> Spliterator
+        pass
+
+    def unordered(self):
+        # type: () -> Any
         pass
 
 

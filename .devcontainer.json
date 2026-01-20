@@ -1,6 +1,11 @@
 {
   "name": "java-api",
   "image": "quay.io/ignition-devs/devcontainer-base:python",
+  "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind",
+  "workspaceFolder": "/workspaces/java-api",
+  "mounts": [
+    "source=pre-commit-cache,target=/root/.cache/pre-commit,type=volume"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [

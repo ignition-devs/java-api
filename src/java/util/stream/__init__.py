@@ -102,14 +102,6 @@ class IntStream(BaseStream):
             # type: (int, IntConsumer) -> None
             raise NotImplementedError
 
-        def add(self, t):
-            # type: (Any) -> Stream.Builder
-            pass
-
-        def build(self):
-            # type: () -> Stream
-            raise NotImplementedError
-
     def close(self):
         # type: () -> None
         pass

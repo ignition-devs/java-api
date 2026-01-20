@@ -13,7 +13,7 @@ from java.util.function import (
     ToIntFunction,
     ToLongFunction,
 )
-from java.util.stream import Stream as Stream
+from java.util.stream import Stream
 
 class Collection:
     def add(self, e: Any) -> bool: ...

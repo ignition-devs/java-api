@@ -9,6 +9,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        "github.vscode-github-actions",
         "ms-python.python",
         "ms-python.vscode-pylance"
       ],
@@ -17,6 +18,8 @@
       }
     }
   },
-  "onCreateCommand": "pre-commit install --hook-type pre-commit --hook-type commit-msg --hook-type pre-push",
-  "postCreateCommand": "python2 -m pip install --requirement requirements.txt"
+  "postCreateCommand": {
+    "pre-commit": "pre-commit install --install-hooks",
+    "dev-requirements": "python2 -m pip install --requirement requirements.txt"
+  }
 }

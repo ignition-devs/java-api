@@ -36,13 +36,13 @@ from typing import Any, Optional, Union
 from java.lang import (
     Appendable,
     AutoCloseable,
-    CharBuffer,
     CharSequence,
     Exception,
     Object,
     Readable,
     Throwable,
 )
+from java.nio import CharBuffer
 from java.nio.channels import FileChannel
 from java.nio.charset import Charset, CharsetDecoder
 

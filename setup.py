@@ -1,5 +1,5 @@
 # pylint: skip-file
-"""Java API Specification."""
+"""Java API Specification"""
 
 from setuptools import setup
 

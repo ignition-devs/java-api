@@ -36,6 +36,7 @@ from typing import Any, Optional, Union
 from java.lang import (
     Appendable,
     AutoCloseable,
+    CharBuffer,
     CharSequence,
     Exception,
     Object,
@@ -334,8 +335,8 @@ class Reader(Object, Readable, Closeable):
         # type: () -> Reader
         pass
 
-    def read(self, *args):
-        # type: (*Any) -> int
+    def read(self, cb):
+        # type: (CharBuffer) -> int
         pass
 
     def ready(self):

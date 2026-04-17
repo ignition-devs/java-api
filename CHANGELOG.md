@@ -1,3 +1,9 @@
+## 17.26.4 (2026-04-16)
+
+### Fix
+
+- **io**: update Reader.read to respect Liskov Substitution Principle (#23)
+
 ## 17.26.0 (2026-01-20)
 
 ### Fix

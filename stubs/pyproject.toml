@@ -6,7 +6,7 @@ requires = [
 
 [project]
 name = "java-api-stubs"
-version = "17.26.4"
+version = "17.26.5"
 description = "Java 17 API Specification stubs for ignition-api"
 readme = "README.md"
 keywords = [

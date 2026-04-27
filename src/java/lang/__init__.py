@@ -22,6 +22,7 @@ __all__ = [
     "Number",
     "Object",
     "Readable",
+    "Record",
     "Runnable",
     "RuntimeException",
     "StackTraceElement",
@@ -853,6 +854,12 @@ class UnsupportedOperationException(RuntimeException):
     def __init__(self, message=None, cause=None):
         # type: (Optional[str], Optional[Throwable]) -> None
         super(UnsupportedOperationException, self).__init__(message, cause)
+
+
+class Record(Object):
+    def __init__(self):
+        # type: () -> None
+        super(Record, self).__init__()
 
 
 class Thread(Object):

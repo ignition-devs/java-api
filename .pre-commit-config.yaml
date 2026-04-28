@@ -32,9 +32,6 @@ repos:
         name: isort-package
         files: ^src/
         args: [--settings-file, tox.ini]
-  - repo: https://github.com/PyCQA/isort
-    rev: 8.0.1
-    hooks:
       - id: isort
         name: isort-stubs
         files: ^stubs/stubs/

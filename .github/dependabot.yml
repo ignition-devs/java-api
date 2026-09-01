@@ -1,10 +1,16 @@
 version: 2
 updates:
-  # Maintain dependencies for GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "quarterly"
+    groups:
+      coatl-dev-actions:
+        patterns:
+          - "coatl-dev/actions/**"
+      coatl-dev-workflows:
+        patterns:
+          - "coatl-dev/workflows/**"
     labels: ["dependencies"]
     commit-message:
       prefix: "ci"

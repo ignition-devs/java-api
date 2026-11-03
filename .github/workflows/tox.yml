@@ -11,7 +11,6 @@ jobs:
     uses: coatl-dev/workflows/.github/workflows/tox.yml@d7cf5f9059f9a5fa365b8c9e06ff63f5d968ddb0 # v7.1.0
     with:
       python-versions: |
-        3.9
         3.10
         3.11
         3.12

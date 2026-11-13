@@ -1,12 +1,12 @@
 {
-  "name": "java-api",
+  "name": "java-api-17",
   "image": "quay.io/ignition-devs/devcontainer-base:python",
   "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind",
   "workspaceFolder": "/workspaces/java-api",
   "mounts": [
     "source=pre-commit-cache,target=/root/.cache/pre-commit,type=volume",
-    "source=java-api-tox,target=${containerWorkspaceFolder}/.tox,type=volume",
-    "source=java-api-tox-stubs,target=${containerWorkspaceFolder}/stubs/.tox,type=volume"
+    "source=java-api-17-tox,target=${containerWorkspaceFolder}/.tox,type=volume",
+    "source=java-api-17-tox-stubs,target=${containerWorkspaceFolder}/stubs/.tox,type=volume"
   ],
   "customizations": {
     "vscode": {

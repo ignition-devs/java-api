@@ -2,12 +2,13 @@ name: publish
 
 on:
   release:
-    types:
-      - published
+    types: [published]
 
 jobs:
   tox:
     uses: $/.github/workflows/tox.yml
+    with:
+      checkout-ref: ${{ github.event.release.tag_name }}
 
   pypi-upload:
     needs: tox
@@ -15,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.release.tag_name }}
 
       - name: Upload package to PyPI
         uses: coatl-dev/actions/pypi-upload@499c77f2bc6f909d372849058517ca2e39ce16d4 # v7.1.3

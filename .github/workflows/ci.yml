@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - '25'
+  pull_request:
+    branches:
+      - '25'
+
+jobs:
+  prek:
+    uses: coatl-dev/workflows/.github/workflows/prek.yml@a58877dc74fd563f9f4ba98d72c695df8fb19f8a # v7.1.5
+    with:
+      checkout-ref: ${{ github.ref }}
+      skip-hooks: 'pylint'
+      python-version: |
+        3.12
+        3.15
+
+  pylint:
+    uses: coatl-dev/workflows/.github/workflows/pylint.yml@a58877dc74fd563f9f4ba98d72c695df8fb19f8a # v7.1.5
+    with:
+      path: src
+      checkout-ref: ${{ github.ref }}
+
+  tox:
+    if: ${{ github.event_name == 'pull_request' }}
+    uses: $/.github/workflows/tox.yml
+    with:
+      checkout-ref: ${{ github.ref }}

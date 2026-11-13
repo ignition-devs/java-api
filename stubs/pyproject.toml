@@ -1,0 +1,47 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=61.2",
+]
+
+[project]
+name = "java-api-stubs"
+version = "25.26.0"
+description = "Java 25 API Specification stubs for ignition-api"
+readme = "README.md"
+keywords = [
+  "coatl.dev",
+  "ignition",
+  "inductive automation",
+  "java",
+]
+license = "MIT"
+authors = [ { name = "César Román", email = "cesar@coatl.dev" } ]
+requires-python = ">=3.9,<3.13"
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Information Technology",
+  "Intended Audience :: Manufacturing",
+  "Operating System :: MacOS :: MacOS X",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Typing :: Stubs Only",
+  "Typing :: Typed",
+]
+urls.Documentation = "https://docs.oracle.com/en/java/javase/25/docs/api/index.html"
+urls.Funding = "https://github.com/sponsors/cesarcoatl"
+urls.Homepage = "https://github.com/ignition-devs/java-api"
+urls.Source = "https://github.com/ignition-devs/java-api/tree/main"
+urls.Tracker = "https://github.com/ignition-devs/java-api/issues"
+
+[tool.setuptools]
+package-dir = { "" = "stubs" }
+include-package-data = true
+package-data."*" = [ "*.pyi", "py.typed" ]

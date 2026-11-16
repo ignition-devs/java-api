@@ -38,7 +38,7 @@ classifiers = [
 urls.Documentation = "https://docs.oracle.com/en/java/javase/25/docs/api/index.html"
 urls.Funding = "https://github.com/sponsors/cesarcoatl"
 urls.Homepage = "https://github.com/ignition-devs/java-api"
-urls.Source = "https://github.com/ignition-devs/java-api/tree/main"
+urls.Source = "https://github.com/ignition-devs/java-api/tree/25"
 urls.Tracker = "https://github.com/ignition-devs/java-api/issues"
 
 [tool.setuptools]

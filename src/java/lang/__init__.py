@@ -32,6 +32,7 @@ __all__ = [
     "String",
     "StringBuffer",
     "StringBuilder",
+    "System",
     "Thread",
     "Throwable",
     "UnsupportedOperationException",
@@ -40,15 +41,18 @@ __all__ = [
 
 import __builtin__ as builtins
 import array
+import os
 import time
 from typing import TYPE_CHECKING, Any, List, Optional, Set, Union
 
 from java.lang.reflect import AccessFlag, Type
 
 if TYPE_CHECKING:
+    from java.io import InputStream, PrintStream
     from java.nio import CharBuffer
+    from java.nio.channels import Channel
     from java.time import Duration
-    from java.util import Iterator, Spliterator
+    from java.util import Iterator, Properties, Spliterator
     from java.util.concurrent import ThreadFactory
     from java.util.function import Consumer, Supplier
     from java.util.stream import IntStream, Stream
@@ -711,6 +715,153 @@ class StringBuilder(Object, CharSequence):
 
     def trimToSize(self):
         # type: () -> None
+        pass
+
+
+class System(Object):
+    """The System class contains several useful class fields and
+    methods.
+
+    It cannot be instantiated. Among the facilities provided by the
+    System class are standard input, standard output, and error output
+    streams; access to externally defined properties and environment
+    variables; a means of loading files and libraries; and a utility
+    method for quickly copying a portion of an array.
+    """
+
+    err = None  # type: PrintStream
+    in_ = None  # type: InputStream
+    out = None  # type: PrintStream
+
+    @staticmethod
+    def arraycopy(src, srcPos, dest, destPos, length):
+        # type: (Any, int, Any, int, int) -> None
+        dest[destPos : destPos + length] = src[srcPos : srcPos + length]
+
+    @staticmethod
+    def clearProperty(key):
+        # type: (Union[str, unicode]) -> Union[str, unicode]
+        pass
+
+    @staticmethod
+    def console():
+        # type: () -> Any
+        pass
+
+    @staticmethod
+    def currentTimeMillis():
+        # type: () -> long
+        return long(time.time() * 1000)
+
+    @staticmethod
+    def exit(status):
+        # type: (int) -> None
+        pass
+
+    @staticmethod
+    def gc():
+        # type: () -> None
+        pass
+
+    @staticmethod
+    def getenv(name=None):
+        # type: (Optional[Union[str, unicode]]) -> Any
+        return dict(os.environ) if name is None else os.environ.get(str(name))
+
+    @staticmethod
+    def getLogger(name, bundle=None):
+        # type: (Union[str, unicode], Optional[Any]) -> Any
+        pass
+
+    @staticmethod
+    def getProperties():
+        # type: () -> Properties
+        pass
+
+    @staticmethod
+    def getProperty(
+        key,  # type: Union[str, unicode]
+        def_=None,  # type: Optional[Union[str, unicode]]
+    ):
+        # type: (...) -> Union[str, unicode]
+        pass
+
+    @staticmethod
+    def getSecurityManager():
+        # type: () -> Any
+        pass
+
+    @staticmethod
+    def identityHashCode(x):
+        # type: (Object) -> int
+        return id(x)
+
+    @staticmethod
+    def inheritedChannel():
+        # type: () -> Channel
+        pass
+
+    @staticmethod
+    def lineSeparator():
+        # type: () -> Union[str, unicode]
+        return os.linesep
+
+    @staticmethod
+    def load(filename):
+        # type: (Union[str, unicode]) -> None
+        pass
+
+    @staticmethod
+    def loadLibrary(libname):
+        # type: (Union[str, unicode]) -> None
+        pass
+
+    @staticmethod
+    def mapLibraryName(libname):
+        # type: (Union[str, unicode]) -> Union[str, unicode]
+        pass
+
+    @staticmethod
+    def nanoTime():
+        # type: () -> long
+        return long(time.time() * 1000000000)
+
+    @staticmethod
+    def runFinalization():
+        # type: () -> None
+        pass
+
+    @staticmethod
+    def setErr(err):
+        # type: (PrintStream) -> None
+        pass
+
+    @staticmethod
+    def setIn(in_):
+        # type: (InputStream) -> None
+        pass
+
+    @staticmethod
+    def setOut(out):
+        # type: (PrintStream) -> None
+        pass
+
+    @staticmethod
+    def setProperties(props):
+        # type: (Properties) -> None
+        pass
+
+    @staticmethod
+    def setProperty(
+        key,  # type: Union[str, unicode]
+        value,  # type: Union[str, unicode]
+    ):
+        # type: (...) -> Union[str, unicode]
+        pass
+
+    @staticmethod
+    def setSecurityManager(sm):
+        # type: (Any) -> None
         pass
 
 

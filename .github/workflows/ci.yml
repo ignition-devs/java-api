@@ -10,7 +10,7 @@ on:
 
 jobs:
   prek:
-    uses: coatl-dev/workflows/.github/workflows/prek.yml@a58877dc74fd563f9f4ba98d72c695df8fb19f8a # v7.1.5
+    uses: coatl-dev/workflows/.github/workflows/prek.yml@65d1a1eda04de5bb54bd5057b3ebe4b7c8fa4b45 # v7.1.6
     with:
       checkout-ref: ${{ github.ref }}
       skip-hooks: 'pylint'
@@ -19,7 +19,7 @@ jobs:
         3.15
 
   pylint:
-    uses: coatl-dev/workflows/.github/workflows/pylint.yml@a58877dc74fd563f9f4ba98d72c695df8fb19f8a # v7.1.5
+    uses: coatl-dev/workflows/.github/workflows/pylint.yml@65d1a1eda04de5bb54bd5057b3ebe4b7c8fa4b45 # v7.1.6
     with:
       path: src
       checkout-ref: ${{ github.ref }}

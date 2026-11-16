@@ -779,8 +779,11 @@ class System(Object):
         pass
 
     @staticmethod
-    def getProperty(key, def_=None):
-        # type: (Union[str, unicode], Optional[Union[str, unicode]]) -> Union[str, unicode]
+    def getProperty(
+        key,  # type: Union[str, unicode]
+        def_=None,  # type: Optional[Union[str, unicode]]
+    ):
+        # type: (...) -> Union[str, unicode]
         pass
 
     @staticmethod
@@ -849,8 +852,11 @@ class System(Object):
         pass
 
     @staticmethod
-    def setProperty(key, value):
-        # type: (Union[str, unicode], Union[str, unicode]) -> Union[str, unicode]
+    def setProperty(
+        key,  # type: Union[str, unicode]
+        value,  # type: Union[str, unicode]
+    ):
+        # type: (...) -> Union[str, unicode]
         pass
 
     @staticmethod

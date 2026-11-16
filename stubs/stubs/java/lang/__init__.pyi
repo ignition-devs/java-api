@@ -1,8 +1,8 @@
 import __builtin__ as builtins
 from typing import Any, List, Optional, Set, Union
 
-from java.lang.reflect import AccessFlag, Type
 from java.io import InputStream, PrintStream
+from java.lang.reflect import AccessFlag, Type
 from java.nio import CharBuffer
 from java.nio.channels import Channel
 from java.time import Duration

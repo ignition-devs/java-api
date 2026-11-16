@@ -11,7 +11,7 @@ jobs:
       matrix:
         branch: ['17', '25']
       fail-fast: false
-    uses: coatl-dev/workflows/.github/workflows/pre-commit-autoupdate.yml@a58877dc74fd563f9f4ba98d72c695df8fb19f8a # v7.1.5
+    uses: coatl-dev/workflows/.github/workflows/pre-commit-autoupdate.yml@65d1a1eda04de5bb54bd5057b3ebe4b7c8fa4b45 # v7.1.6
     with:
       autoupdate-branch:  '${{ matrix.branch }}'
       checkout-ref: ${{ matrix.branch }}

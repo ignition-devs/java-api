@@ -38,10 +38,10 @@ classifiers = [
 urls.Documentation = "https://docs.oracle.com/en/java/javase/17/docs/api/index.html"
 urls.Funding = "https://github.com/sponsors/cesarcoatl"
 urls.Homepage = "https://github.com/ignition-devs/java-api"
-urls.Source = "https://github.com/ignition-devs/java-api/tree/main"
+urls.Source = "https://github.com/ignition-devs/java-api/tree/17"
 urls.Tracker = "https://github.com/ignition-devs/java-api/issues"
 
 [tool.setuptools]
-include-package-data = true
 package-dir = { "" = "stubs" }
+include-package-data = true
 package-data."*" = [ "*.pyi", "py.typed" ]
